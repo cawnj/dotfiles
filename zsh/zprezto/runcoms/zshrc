@@ -40,3 +40,9 @@ fi
 chpwd() ls
 
 # Aliases
+alias sshdcu="ssh joycec27@student.computing.dcu.ie"
+alias killkodi="kodi-send --action='Quit'"
+alias sl="/usr/games/sl"
+
+# Environment Variables
+export EINSTEIN_USERNAME="joycec27"

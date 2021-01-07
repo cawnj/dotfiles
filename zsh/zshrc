@@ -1,0 +1,59 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# start tmux
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
+# start zplug
+source ~/.zplug/init.zsh
+
+# plugins
+zplug "plugins/git",   from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "b4b4r07/enhancd"
+zplug "junegunn/fzf"
+zplug "Peltoche/lsd"
+zplug "zsh-users/zsh-syntax-highlighting"
+
+# up
+function up_widget() {
+    BUFFER="cd .."
+    zle accept-line
+}
+zle -N up_widget
+bindkey "^k" up_widget
+
+# git
+function git_prepare() {
+    if [ -n "$BUFFER" ];
+        then
+            BUFFER="git add -A && git commit -m \"$BUFFER\" && git push"
+    fi
+    if [ -z "$BUFFER" ];
+        then
+            BUFFER="git add -A && git commit -v && git push"
+    fi
+
+    zle accept-line
+}
+zle -N git_prepare
+bindkey "^g" git_prepare
+
+# Custom cd
+chpwd() ls
+
+# Aliases
+alias sshdcu="ssh joycec27@student.computing.dcu.ie"
+
+# Environment Variables
+export EINSTEIN_USERNAME="joycec27"

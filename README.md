@@ -1,2 +1,2 @@
 # dotfiles
-Configuration files for zsh and tmux
+Configuration files for bash, git, tmux, vim and zsh

@@ -90,6 +90,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 export PATH=$PATH:$(go env GOPATH)/bin
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+export PATH=`gem environment gemdir`/bin:$PATH
 
 # User configuration
 tmux source-file ~/.tmux.conf
@@ -145,3 +148,7 @@ alias prettyjson="python -m json.tool"
 
 alias chrome="open -a \"Google Chrome\""
 alias word="open -a \"Microsoft Word\""
+
+alias mountleo="sudo mkdir /Volumes/leo; sudo mount /Volumes/leo"
+alias umountleo="sudo umount /Volumes/leo"
+

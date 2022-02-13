@@ -3,3 +3,7 @@
 	email = conor.joyce27@mail.dcu.ie
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = /Users/conor/.gitignore_global
+[pull]
+	rebase = true

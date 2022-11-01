@@ -1,9 +1,12 @@
 [user]
 	name = Conor Joyce
 	email = conor.joyce27@mail.dcu.ie
+	signingkey = 6A58F81CCAB91537
 [init]
 	defaultBranch = main
 [core]
 	excludesfile = /Users/conor/.gitignore_global
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true

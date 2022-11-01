@@ -90,9 +90,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 export PATH=$PATH:$(go env GOPATH)/bin
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH=/opt/homebrew/opt/libpq/bin:$PATH
 export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 export PATH=`gem environment gemdir`/bin:$PATH
+export PATH=~/.yarn/bin:$PATH
+export PATH=~/.local/bin:$PATH
+export PATH=/opt/homebrew/opt/util-linux/bin:$PATH
+export PATH=/opt/homebrew/opt/util-linux/sbin:$PATH
+
+# ANTLR
+CLASSPATH="/opt/homebrew/Cellar/antlr/4.11.1/antlr-4.11.1-complete.jar:."
 
 # User configuration
 tmux source-file ~/.tmux.conf
@@ -151,4 +158,5 @@ alias word="open -a \"Microsoft Word\""
 
 alias mountleo="sudo mkdir /Volumes/leo; sudo mount /Volumes/leo"
 alias umountleo="sudo umount /Volumes/leo"
+alias leo="mosh cj@leo.local.cawnj.dev"
 

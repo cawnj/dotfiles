@@ -132,6 +132,27 @@ function up_widget() {
 zle -N up_widget
 bindkey "^k" up_widget
 
+# nvmrc autoload
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install &> /dev/null
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use &> /dev/null
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default &> /dev/null
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.

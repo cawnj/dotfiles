@@ -99,7 +99,7 @@ export PATH=/opt/homebrew/opt/util-linux/bin:$PATH
 export PATH=/opt/homebrew/opt/util-linux/sbin:$PATH
 
 # ANTLR
-CLASSPATH="/opt/homebrew/Cellar/antlr/4.11.1/antlr-4.11.1-complete.jar:."
+export CLASSPATH="/opt/homebrew/Cellar/antlr/4.11.1/antlr-4.11.1-complete.jar:."
 
 # User configuration
 tmux source-file ~/.tmux.conf

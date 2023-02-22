@@ -166,9 +166,6 @@ alias gpr_main="git push origin HEAD:refs/for/main"
 alias gpr_wip="git push origin HEAD:refs/for/main%wip"
 alias gls="git log --show-signature"
 alias sminit="git submodule update --init --recursive"
-alias gcane="git commit -a --amend --no-edit"
-alias gcm="git commit -m"
-alias gs="git status"
 
 alias kdev="kubectl config use-context dev"
 alias kinfra="kubectl config use-context infra"
@@ -181,5 +178,4 @@ alias word="open -a \"Microsoft Word\""
 
 alias mountleo="sudo mkdir /Volumes/leo; sudo mount /Volumes/leo"
 alias umountleo="sudo umount /Volumes/leo"
-alias leo="mosh cj@leo.local.cawnj.dev"
 

@@ -179,3 +179,6 @@ alias word="open -a \"Microsoft Word\""
 alias mountleo="sudo mkdir /Volumes/leo; sudo mount /Volumes/leo"
 alias umountleo="sudo umount /Volumes/leo"
 
+# kills the icloud storage popup notification
+alias icloudkill="pkill -9 UserNotificationCenter; sleep 5; pkill -9 System\ Preferences"
+

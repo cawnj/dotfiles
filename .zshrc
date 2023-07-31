@@ -182,3 +182,12 @@ alias umountleo="sudo umount /Volumes/leo"
 # kills the icloud storage popup notification
 alias icloudkill="pkill -9 UserNotificationCenter; sleep 5; pkill -9 System\ Preferences"
 
+export PATH="/opt/homebrew/opt/go@1.19/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/conor/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
